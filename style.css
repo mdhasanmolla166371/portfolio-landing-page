@@ -13,6 +13,22 @@
 /* Reddit Mono */
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Reddit+Mono:wght@200..900&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
 
+@keyframes fadeUp {
+  from {
+    transform: translateY(100px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+.text-reveal {
+  animation: fadeUp linear;
+  animation-timeline: view();
+  animation-range: entry 10% cover 40%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -448,7 +464,6 @@ header h1 {
 }
 
 .table {
-  max-width: 799px;
   width: 100%;
   display: flex;
   overflow-x: auto;
@@ -463,7 +478,6 @@ header h1 {
 .column1 .tableTitle1,
 .column2 .tableTitle2,
 .column3 .tableTitle3 {
-  flex: 1;
   padding: 40px 30px;
   display: flex;
   justify-content: center;
@@ -521,6 +535,7 @@ header h1 {
   align-items: center;
   color: #485c11;
 }
+
 .testimonialSection {
   display: flex;
   flex-direction: column;
@@ -745,22 +760,21 @@ header h1 {
 }
 .credits {
   display: flex;
-  justify-content: space-between;
   gap: 40px;
   align-items: end;
 }
 .bottomText {
+  width: 100%;
   display: flex;
-  align-items: end;
+  justify-content: space-between;
+}
+
+.copyrights {
+  display: flex;
   gap: 16px;
 }
-.bottomText {
-  width: 96px;
-  display: flex;
-  align-items: end;
-  gap: 16px;
-}
-.bottomText p {
+
+.copyrights p {
   font-family: "roboto mono";
   font-size: 10.5px;
   font-weight: normal;
@@ -768,6 +782,7 @@ header h1 {
   color: #485c11;
   letter-spacing: -3%;
 }
+
 .rights p {
   font-family: "roboto mono";
   font-size: 10.5px;
@@ -775,26 +790,7 @@ header h1 {
   line-height: 140%;
   color: #485c11;
   letter-spacing: -3%;
-  text-align: left;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @media screen and (min-width: 800px) {
   .fullContainer {
@@ -808,7 +804,6 @@ header h1 {
   }
   .nav-2 {
     display: flex;
-    border: 1px solid;
     align-items: center;
     padding-top: 25px;
     padding-bottom: 80px;
@@ -853,6 +848,7 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 100px;
     backdrop-filter: blur(30px);
+    z-index: 100;
   }
   .navItems a {
     text-decoration: none;
@@ -873,60 +869,64 @@ header h1 {
     display: block;
     width: 100%;
   }
-  .benifitsSection .text h2:nth-of-type(1){
+  .benifitsSection .text h2:nth-of-type(1) {
     font-size: 12px;
   }
-  .benifitsSection .text p:nth-of-type(1){
+  .benifitsSection .text p:nth-of-type(1) {
     font-size: 60px;
   }
-  .iconmodule{
+  .iconmodule {
     width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: center;
   }
-  .iconLockup{
-    max-width:285px;
+  .iconLockup {
+    max-width: 285px;
     width: 100%;
   }
-.heroImage{
-  width: 100%;
-}
-.heroImage img{
-  width: 100%;
-}
-.featuresCarousel{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 20px;
-}
-.featuresCarouselv1{
-  width:590px;
-  height: 711px;
-}
+  .heroImage {
+    width: 100%;
+  }
+  .heroImage img {
+    width: 100%;
+  }
+  .featuresCarousel {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .featuresCarouselv1 {
+    width: 590px;
+    height: 711px;
+  }
 
-.featuresCarouselv1 img{
-  width: 100%;
-  height: 100%;
-}
-.list .listItem{
-  padding-right: 80px;
-}
+  .featuresCarouselv1 img {
+    width: 100%;
+    height: 100%;
+  }
+  .list .listItem {
+    padding-right: 80px;
+  }
+  .testimonialSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .quote {
+    max-width: 50%;
+  }
+  .centeredCTA a{
+    width: 50%;
+  }
+  .navItems2 {
+    display: flex;
+    flex-direction: row;
 
-
-
-
-
-
-
-
-
-
-
-
-
+  }
 
 }
